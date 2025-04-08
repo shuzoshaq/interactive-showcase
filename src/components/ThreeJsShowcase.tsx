@@ -16,7 +16,7 @@ const Box = ({ position, size = [1, 1, 1], color = 'white', metalness = 0.5, rou
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   
-  useFrame((state) => {
+  useFrame(() => {
     if (!meshRef.current) return;
     
     meshRef.current.rotation.x += 0.005;
@@ -40,7 +40,7 @@ const AnimatedSphere = ({ position, radius = 0.7, color = '#ff7700' }: {
   const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
   
-  useFrame((state) => {
+  useFrame(() => {
     if (!meshRef.current) return;
     
     meshRef.current.rotation.x = meshRef.current.rotation.y += 0.01;
@@ -81,7 +81,7 @@ const TorusKnot = ({ position, color = '#6366f1' }: {
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   
-  useFrame((state) => {
+  useFrame(() => {
     if (!meshRef.current) return;
     
     meshRef.current.rotation.x += 0.01;

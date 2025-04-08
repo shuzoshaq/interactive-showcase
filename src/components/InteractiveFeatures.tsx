@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const InteractiveFeatures = () => {
   const [activeTab, setActiveTab] = useState<'cards' | 'forms' | 'gestures' | 'animations'>('cards');
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  // Position state is used for internal component logic
   const constraintsRef = useRef(null);
   
   // Form state
@@ -443,20 +443,5 @@ const InteractiveFeatures = () => {
 };
 
 export default InteractiveFeatures;
-
-// Add these styles to your CSS file or component
-const styles = `
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-`;
 
 // This is just to show the styles, they should be added to your CSS

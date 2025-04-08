@@ -224,7 +224,7 @@ animate()`,
   // Set initial code
   useEffect(() => {
     setCode(codeSnippets[language]);
-  }, [language]);
+  }, [language, codeSnippets]);
   
   // Run code function
   const runCode = () => {
@@ -237,7 +237,7 @@ animate()`,
         if (language === 'javascript') {
           // Create a safe execution environment
           const originalConsoleLog = console.log;
-          let logs: string[] = [];
+          const logs: string[] = [];
           
           // Override console.log
           console.log = (...args) => {
@@ -256,7 +256,7 @@ animate()`,
           
           // Execute code
           try {
-            // eslint-disable-next-line no-new-func
+            // Function constructor is needed here for dynamic code execution
             new Function(code)();
             clearTimeout(timeoutId);
           } catch (e) {
