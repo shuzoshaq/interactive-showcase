@@ -1,0 +1,15 @@
+# Build output
+.next/
+out/
+
+# Node modules
+node_modules/
+
+# Public assets
+public/
+
+# Generated files
+*.generated.*
+
+# Cache
+.eslintcache
